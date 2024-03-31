@@ -1,3 +1,7 @@
+//Yo what up
+//This is just class definitions and stuff to set me up for success, it makes everything easier 🫡
+
+
 #ifndef TETRIS_H
 #define TETRIS_H
 
