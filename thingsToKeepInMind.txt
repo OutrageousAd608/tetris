@@ -43,4 +43,3 @@ some more stuff to work out
 from what I understand right now, I will have to multithread this stuff up
 one for getting user input, one for printing the board.
 
-if((fallingFigure->first->x == column && fallingFigure->first->y == row) || (fallingFigure->second->x == column && fallingFigure->second->y == row) || (fallingFigure->third->x == column && fallingFigure->third->y == row) || (fallingFigure->fourth->x == column && fallingFigure->fourth->y == row)){
