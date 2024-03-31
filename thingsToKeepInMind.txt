@@ -1,0 +1,46 @@
+ummm
+first things first
+blocks fall from the sky
+
+alright I'll make a list
+
+1. blocks fall from the sky
+2. blocks can be rotated as they fall
+3. blocks should have a middle block that doesnt move as it falls and the 
+    rest off the parts of the block rotate around that one block that doesnt move in the x
+4. blocks can be shifted left and right as they fall
+5. time should ramp up
+6. program does not wait for user input, it accepts whenever
+
+alrighty, now logic and functions I should make will be up to the current Richard
+that is thinking with his brain. The Richard right now had no contorl over what
+the future Richard will implement.
+
+let's start.
+
+I am thinking of a huge 2D matrix to store the board
+the different shapes will have their own classes
+within these classes there will be...
+    colors 
+    central block location
+    location of other block part of the same big block
+
+
+also the blocks should not be able to be rotated if it make them overlap with other boxes
+I need a system to detect if blocks become overlapped
+
+hmmmmm
+我想一想
+oooooh i know
+
+check if it overlaps with another block before change it(shift or rotate)
+well that was easy
+
+lets get to the code..
+
+oops
+some more stuff to work out
+from what I understand right now, I will have to multithread this stuff up
+one for getting user input, one for printing the board.
+
+if((fallingFigure->first->x == column && fallingFigure->first->y == row) || (fallingFigure->second->x == column && fallingFigure->second->y == row) || (fallingFigure->third->x == column && fallingFigure->third->y == row) || (fallingFigure->fourth->x == column && fallingFigure->fourth->y == row)){
