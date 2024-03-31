@@ -1,0 +1,92 @@
+  1 2 3 4 5 6 7 8 9 10
+|[][][][][][][][][][]|
+|                    |
+|                    |
+| . . . . . . . . . .|
+|                    |
+|        []          |
+|        []          |
+|        [][]        |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|    []              |
+|[][][]      [][][][]|
+|@@@@@@@@@@@@@@@@@@@@|
+
+
+
+it is 20 height and 10 wide but will have 4 extra at the top for where the blocks spawn and start falling from
+additionally, one space horizontally is not wide enough so each block will be two spaces wide
+
+also colors: blue, green, purple, red, orange, yellow, and cyan
+also shapes: 
+I-Block.
+  []
+  []
+  []
+  []
+J-Block.
+  []
+  []
+[][]
+L-Block.
+  []
+  []
+  [][]
+O-Block.
+[][]
+[][]
+S-Block.
+
+  [][]
+[][]
+T-Block.
+
+[][][]
+  []
+Z-Block.
+
+[][]
+  [][]
+
+example frame:
+|  []                |
+|  []                |
+|                    |
+| . . . . . . . . . .|
+|                    |
+|         []         |
+|         []         |
+|         [][]       |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|    []              |
+|[][][]      [][][][]|
+|@@@@@@@@@@@@@@@@@@@@|
+                    
+as the blocks fall, the blocks will fall as class i, j, l, etc. and then once they settle, they will be destoyed and exist as singular blocks on the row
+
