@@ -77,6 +77,8 @@ class figure{
             delete second;
             delete third;
             delete fourth;
+            delete shadow;
+            shadow = nullptr;
         }
 
 };
