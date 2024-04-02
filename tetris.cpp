@@ -31,6 +31,7 @@ figure* fallingFigure;
 clock_t lastTimeBlockLowered = std::clock();
 
 int main(){
+    system("stty cooked");
     std::cout << 
 "Welcome to my tetris game, uhh, rules can be looked up online." << std::endl <<
 "The controls for this game will just be:" << std::endl <<
@@ -114,14 +115,10 @@ std::cout << "To start, just choose a level (a number between 1 and 15 inclusive
             lastTimeBlockLowered = std::clock();
             boardPrinter();
         }
-        if(removeCompleteRows()){
-            boardPrinter();
-        }
         gameOver = isGameOver();
     }
     system("stty cooked");
     std::cout << std::endl << std::endl << "GGs gamer! Your score was " << score << "." << std::endl;
-
 }
 
 void addFigureToBoard(){
@@ -322,7 +319,7 @@ figure* newFigure(){
             fallingFigure->third->y = 2;
             fallingFigure->fourth->x = 4;
             fallingFigure->fourth->y = 3;
-            fallingFigure->figureColor = color::blue;
+            fallingFigure->figureColor = color::cyan;
             break;
         case(shape::j):
             fallingFigure->first->x = 5;
@@ -333,7 +330,7 @@ figure* newFigure(){
             fallingFigure->third->y = 2;
             fallingFigure->fourth->x = 4;
             fallingFigure->fourth->y = 2;
-            fallingFigure->figureColor = color::green;
+            fallingFigure->figureColor = color::blue;
             break;
         case(shape::l):
             fallingFigure->first->x = 4;
@@ -344,7 +341,7 @@ figure* newFigure(){
             fallingFigure->third->y = 2;
             fallingFigure->fourth->x = 5;
             fallingFigure->fourth->y = 2;
-            fallingFigure->figureColor = color::purple;
+            fallingFigure->figureColor = color::white;
             break;
         case(shape::o):
             fallingFigure->first->x = 4;
@@ -355,7 +352,7 @@ figure* newFigure(){
             fallingFigure->third->y = 1;
             fallingFigure->fourth->x = 4;
             fallingFigure->fourth->y = 1;
-            fallingFigure->figureColor = color::red;
+            fallingFigure->figureColor = color::yellow;
             break;
         case(shape::s):
             fallingFigure->first->x = 6;
@@ -366,7 +363,7 @@ figure* newFigure(){
             fallingFigure->third->y = 2;
             fallingFigure->fourth->x = 4;
             fallingFigure->fourth->y = 2;
-            fallingFigure->figureColor = color::white;
+            fallingFigure->figureColor = color::green;
             break;
         case(shape::t):
             fallingFigure->first->x = 4;
@@ -377,7 +374,7 @@ figure* newFigure(){
             fallingFigure->third->y = 1;
             fallingFigure->fourth->x = 5;
             fallingFigure->fourth->y = 2;
-            fallingFigure->figureColor = color::yellow;
+            fallingFigure->figureColor = color::purple;
             break;
         case(shape::z):
             fallingFigure->first->x = 4;
@@ -388,7 +385,7 @@ figure* newFigure(){
             fallingFigure->third->y = 2;
             fallingFigure->fourth->x = 6;
             fallingFigure->fourth->y = 2;
-            fallingFigure->figureColor = color::cyan;
+            fallingFigure->figureColor = color::red;
             break;
     }
     fallingFigure->shadow = new figure;
@@ -438,8 +435,9 @@ bool removeCompleteRows(){
                 }
                 --tempRow;
             }
+        }else{
+            --row;
         }
-        --row;
     }
     switch(completeRowsCount){
         case(0):
@@ -515,6 +513,7 @@ void rotateFigure(){
         fallingFigure->third->y = newThirdy + shift;
         fallingFigure->fourth->x = newFourthx + shift;
         fallingFigure->fourth->y = newFourthy + shift;
+        return;
     }
 }
 
@@ -541,28 +540,52 @@ void userInput(){
             std::cin >> figureMove; 
             switch(figureMove){
                 case('d'):
-                    figureToShadow();
+                    if(!gameOver){
+                        figureToShadow();
+                        break;
+                    }
                     break;
                 case('D'):
-                    figureToShadow();
+                    if(!gameOver){
+                        figureToShadow();
+                        break;
+                    }
                     break;
                 case('f'):
-                    rotateFigure();
+                    if(!gameOver){
+                        rotateFigure();
+                        break;
+                    }
                     break;
                 case('F'):
-                    rotateFigure();
+                    if(!gameOver){
+                        rotateFigure();
+                        break;
+                    }
                     break;
                 case('j'):
-                    shiftFigure(0);
+                    if(!gameOver){
+                        shiftFigure(0);
+                        break;
+                    }
                     break;
                 case('J'):
-                    shiftFigure(0);
+                    if(!gameOver){
+                        shiftFigure(0);
+                        break;
+                    }
                     break;
                 case('k'):
-                    shiftFigure(1);
+                    if(!gameOver){
+                        shiftFigure(1);
+                        break;
+                    }
                     break;
                 case('K'):
-                    shiftFigure(1);
+                    if(!gameOver){
+                        shiftFigure(1);
+                        break;
+                    }
                     break;
             }
             if(!gameOver){
